@@ -1,5 +1,5 @@
 # **JELLYJOBS**  
-![Logo Medusa](frontend/src/assets/images/MEDUSA500x500JellyJobs.png =250x250)
+![Logo Medusa](frontend/src/assets/images/MEDUSA500x500JellyJobs.png=250x250)
 **Bolsa de Trabajo Inmediata**  
 
 ---

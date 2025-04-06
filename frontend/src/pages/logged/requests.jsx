@@ -9,7 +9,7 @@ import {
     DeleteOutlined,
 } from "@ant-design/icons";
 import { useNavigate } from "react-router-dom"; // Importar useNavigate
-import HeaderLog from "../../components/common/header-log.jsx";
+import Header from "../../components/common/header.jsx";
 import NotificationPopup from "../../components/common/notifyPopUp.jsx"; // Importar correctamente el popup
 import '../../assets/styles/pages/requests.css';
 import Cookies from 'js-cookie';
@@ -125,7 +125,7 @@ const Solicitudes = () => {
     return (
         <div className="home-page">
             {/* HEADER */}
-            <HeaderLog userEmail={userEmail}/>
+            <Header userEmail={userEmail}/>
 
             <div className="main-container">
                 {/* MENU LATERAL */}

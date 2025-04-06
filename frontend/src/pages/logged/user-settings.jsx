@@ -7,6 +7,8 @@ import videoFondo from '../../assets/images/medumedusin.mp4';
 import { jwtDecode } from 'jwt-decode';
 import Cookies from 'js-cookie'; 
 import { useNavigate } from 'react-router-dom';
+import { useUser } from "../../context/UserContext"; //IMPORTACIÓN DEL CONTEXTO USERCONTEXT
+
 
 const { Title, Text } = Typography;
 const { TabPane } = Tabs;
@@ -17,6 +19,7 @@ export default function ProfilePage() {
     const [currentPassword, setCurrentPassword] = useState('');
     const [newPassword, setNewPassword] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const { setUser } = useUser(); //SET USER
     
     const handleChangePassword = () => {
         if (!currentPassword || !newPassword || !confirmPassword) {
@@ -61,7 +64,6 @@ export default function ProfilePage() {
                 message.error(data.error);
             }
         })
-        .catch(error => message.error("Error en el servidor."));
     };
 
     const navigate = useNavigate();  // Usar useNavigate para redirigir
@@ -72,13 +74,11 @@ export default function ProfilePage() {
             setUserEmail(decoded.email);
         }
     }, []);
-        // Función para manejar el cierre de sesión
+    // FUNCIÓN PARA CERRAR SESIÓN
     const handleLogout = () => {
-        // Eliminar la cookie
         Cookies.remove("access_token");
-    
-        // Redirigir al login después de eliminar la cookie
-        navigate("/"); // Redirige al login
+        setUser(null); 
+        navigate("/"); 
     };
 
     const handleEmailChange = () => {

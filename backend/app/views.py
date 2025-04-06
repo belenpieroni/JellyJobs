@@ -159,7 +159,6 @@ class VerifyTokenView(APIView):
     
     def post(self, request):
         try:
-            # Obtener el token desde la cookie 'token'
             token = request.COOKIES.get('token')
 
             if not token:
@@ -168,35 +167,30 @@ class VerifyTokenView(APIView):
             # Decodifica y verifica el token usando la clave secreta
             decoded = jwt.decode(token, settings.SECRET_KEY, algorithms=['HS256'])  # Usando la clave secreta configurada en settings
 
-            # Si el token es válido, devolvemos la respuesta afirmativa
             return Response({"isValid": True})
 
         except jwt.ExpiredSignatureError:
-            # Si el token ha expirado
             return Response({"isValid": False, "error": "Token expirado"})
         except jwt.InvalidTokenError:
-            # Si el token es inválido
             return Response({"isValid": False, "error": "Token inválido"})
         except AuthenticationFailed as e:
-            # En caso de que no haya token o sea inválido
             return Response({"isValid": False, "error": str(e)})
 
 class AdminLoginView(APIView):
     def post(self, request, *args, **kwargs):
-        # Extrae el email y la contraseña del cuerpo de la solicitud
         email = request.data.get('email')
         password = request.data.get('contrasena')
 
         # Busca al administrador por el email
         admin = get_object_or_404(Admins, email=email)
 
-        # Verifica la contraseña usando check_password de Django
-        if check_password(password, admin.contrasena):  # admin.contrasena debe estar guardada como un hash
-            # Si la contraseña es correcta, puedes proceder a generar el token
+        if check_password(password, admin.contrasena):  
             token = create_access_token(admin)
-            return Response({'access': token})
+            return Response({
+                'access': token,
+                'role':'admin' #ROL  
+                })
         else:
-            # Si la contraseña es incorrecta, lanzar un error
             raise exceptions.AuthenticationFailed('Credenciales incorrectas')
 
 class CrearTrabajadorPendienteAPIView(APIView):

@@ -8,7 +8,7 @@ import {
     StarOutlined,
     SkinOutlined,
 } from '@ant-design/icons';
-import HeaderLog from '../../components/common/header-log.jsx';
+import Header from '../../components/common/header.jsx';
 import { useNavigate } from 'react-router-dom';
 import NotificationPopup from '../../components/common/notifyPopUp.jsx';
 import Cookies from 'js-cookie';
@@ -91,7 +91,7 @@ export default function Uniform() {
 
     return (
         <div className="home-page">
-            <HeaderLog userEmail={userEmail} />
+            <Header userEmail={userEmail} />
             <div className="menu-container">
                 <Menu
                     className="menu-functions"

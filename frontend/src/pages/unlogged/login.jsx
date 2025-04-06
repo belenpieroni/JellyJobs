@@ -1,5 +1,4 @@
-import { Form, Input, Button, message,notification } from 'antd';
-import {jwtDecode} from 'jwt-decode';
+import { Form, Input, Button,notification } from 'antd';
 import { useState } from "react";
 import { LeftCircleFilled } from '@ant-design/icons';
 import { Link, useNavigate } from "react-router-dom";
@@ -7,11 +6,13 @@ import '../../assets/styles/pages/login.css';
 import React from 'react'; 
 import videoFondo from '../../assets/images/medumedusin.mp4';
 import Cookies from "js-cookie";
+import { useUser } from "../../context/UserContext"; //IMPORTACIÓN DEL CONTEXTO USERCONTEXT
 
 const Login = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-  const [error, setError] = useState("");
+  const [setError] = useState("");
+  const { setUser } = useUser(); // PARA ACTUALIZAR EL CONTEXTO
 
   const onFinish = async (values) => {
     try {
@@ -19,7 +20,7 @@ const Login = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
-        credentials: "include", // Para permitir cookies en la respuesta
+        credentials: "include", 
       });
 
       if (!response.ok) {
@@ -34,9 +35,18 @@ const Login = () => {
         message: "Éxito",
         description: "Bienvenido...",
       });
+
       const data = await response.json();
       Cookies.set("access_token", data.access); // Almacena el JWT en cookies
-      navigate("/home"); // Redirige al home
+
+      //GUARDAMOS LOS DATOS DEL ADMIN EN EL CONTEXTO
+      setUser({
+        email: data.email,
+        id: data.idadmin,
+        role: "admin", //ROL
+      });
+
+      navigate("/home"); 
     } catch (error) {
       setError(error.message);
     }
@@ -76,7 +86,7 @@ const Login = () => {
 
           <Form.Item
             className='form-items'
-            name="contrasena" // <-- Asegura que el frontend envía "contrasena"
+            name="contrasena" 
             rules={[
               { required: true, message: 'Por favor, ingresa tu contraseña.' }
             ]}

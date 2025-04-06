@@ -18,11 +18,13 @@ import Solicitudes from './pages/logged/requests.jsx';
 import PrivateRoute from './funcionalitys/privateRout.jsx';
 import Create from './pages/logged/create.jsx';
 import Uniform from './pages/logged/uniform.jsx';
+import { UserProvider } from './context/UserContext'; //IMPORTACIÓN DEL CONTEXTO
 
 
 function App() {
 
     return (
+      <UserProvider> 
         <Router>
                 <Routes>
                     <Route path="/" element={<Landing />} />
@@ -42,6 +44,7 @@ function App() {
                     
                 </Routes>
         </Router>
+      </UserProvider>
     );
 }
 

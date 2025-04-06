@@ -12,7 +12,7 @@ import {
     SkinOutlined,
     DeleteOutlined,
 } from '@ant-design/icons';
-import HeaderLog from '../../components/common/header-log.jsx';
+import Header from '../../components/common/header.jsx';
 import DetalleTrabajador from '../../components/common/detail.jsx';
 import { useNavigate } from 'react-router-dom';
 import NotificationPopup from '../../components/common/notifyPopUp.jsx';
@@ -172,7 +172,7 @@ export default function Home() {
 
     return (
         <div className="home-page">
-            <HeaderLog userEmail={userEmail} />
+            <Header userEmail={userEmail} />
             <div className="menu-container">
                 <Menu
                     className="menu-functions"

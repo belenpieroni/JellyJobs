@@ -7,13 +7,10 @@ import {
     FileTextOutlined, 
     StarOutlined, 
     SearchOutlined, 
-    LeftOutlined, 
-    RightOutlined, 
     SkinOutlined 
 } from '@ant-design/icons';
 import { useNavigate } from "react-router-dom";
-import HeaderLog from '../../components/common/header-log.jsx';
-import NotificationPopup from "../../components/common/notifyPopUp.jsx"; 
+import Header from '../../components/common/header.jsx';
 import { jwtDecode } from 'jwt-decode';
 import Cookies from 'js-cookie';
 
@@ -25,8 +22,8 @@ export default function Scores() {
     const [searchValue, setSearchValue] = useState('');
     const [selectedTrabajadores, setSelectedTrabajadores] = useState([]); // Mantén solo un trabajador seleccionado
     const [modalVisible, setModalVisible] = useState(false);
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isNotificationOpen, setIsNotificationOpen] = useState(false);
+    const [ setCurrentIndex] = useState(0);
+    const [ setIsNotificationOpen] = useState(false);
 
     useEffect(() => {
         const token = Cookies.get("access_token");
@@ -155,7 +152,7 @@ export default function Scores() {
 
     return (
         <div className="home-page">
-            <HeaderLog userEmail={userEmail} />
+            <Header userEmail={userEmail} />
             
             {/* MENU LATERAL */}
             <div className="menu-container">

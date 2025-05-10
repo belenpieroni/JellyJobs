@@ -1,5 +1,6 @@
 # **JELLYJOBS**  
-![logoSinFondo](https://github.com/user-attachments/assets/31c098e2-84cb-4fb1-ab4c-bd84031ed9e7)
+![Logo Medusa](frontend/src/assets/images/MEDUSA500x500JellyJobs.png)
+
 **Bolsa de Trabajo Inmediata**  
 
 ---

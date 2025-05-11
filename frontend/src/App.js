@@ -1,9 +1,5 @@
 import React from 'react';
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import 'antd/dist/reset.css'; 
 import NotFound from './pages/unlogged/notFound.jsx';
 import Landing from './pages/unlogged/landing.jsx';

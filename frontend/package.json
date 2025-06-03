@@ -9,6 +9,7 @@
     "antd": "^5.20.3",
     "axios": "^1.7.9",
     "dayjs": "^1.11.13",
+    "jellyjobs": "file:",
     "js-cookie": "^3.0.5",
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
@@ -18,8 +19,8 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-"homepage": "https://belenpieroni.github.io/JellyJobs",
-"scripts": {
+  "homepage": "https://Ivo4774.github.io/JellyJobs",
+  "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",

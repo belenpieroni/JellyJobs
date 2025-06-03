@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/JellyJobs/static/css/main.72ed4046.css",
-    "main.js": "/JellyJobs/static/js/main.d412cb48.js",
+    "main.css": "/JellyJobs/static/css/main.5b4e7c7e.css",
+    "main.js": "/JellyJobs/static/js/main.141e285e.js",
     "static/media/medumedusin.mp4": "/JellyJobs/static/media/medumedusin.df227bf903b76db2c915.mp4",
     "static/media/jellyWall.jpeg": "/JellyJobs/static/media/jellyWall.b8a53fd7e824502561f8.jpeg",
     "static/media/jellyAccountant.jpeg": "/JellyJobs/static/media/jellyAccountant.2a6d361879f297b09b82.jpeg",
@@ -11,11 +11,11 @@
     "static/media/jellyChef.jpeg": "/JellyJobs/static/media/jellyChef.c69782dbcd2cbd386934.jpeg",
     "static/media/logo.png": "/JellyJobs/static/media/logo.35aabd580ca8539ae8b4.png",
     "index.html": "/JellyJobs/index.html",
-    "main.72ed4046.css.map": "/JellyJobs/static/css/main.72ed4046.css.map",
-    "main.d412cb48.js.map": "/JellyJobs/static/js/main.d412cb48.js.map"
+    "main.5b4e7c7e.css.map": "/JellyJobs/static/css/main.5b4e7c7e.css.map",
+    "main.141e285e.js.map": "/JellyJobs/static/js/main.141e285e.js.map"
   },
   "entrypoints": [
-    "static/css/main.72ed4046.css",
-    "static/js/main.d412cb48.js"
+    "static/css/main.5b4e7c7e.css",
+    "static/js/main.141e285e.js"
   ]
 }
